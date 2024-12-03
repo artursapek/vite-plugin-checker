@@ -204,9 +204,11 @@ export function checker(userConfig: UserPluginConfig): Plugin {
       })
 
       if (server.ws.on) {
+        /*
         server.watcher.on('change', () => {
           logger!.clearScreen('error')
         })
+        */
         server.ws.on('vite-plugin-checker', (data) => {
           // NOTE: sync modification with packages /packages/runtime/src/ws.js
           if (data.event === 'runtime-loaded') {
